@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Enter Amount</h1>
+<div mat-dialog-content>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+    <mat-form-field>
+      <input matInput placeholder="From" name="start" ngModel>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="To" name="end" ngModel>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Charge" name="cost" ngModel>
+    </mat-form-field>
+    <br>
+  <button mat-raised-button color="primary" type="submit">Save</button>
+  <button mat-button (click)="onNoClick()" color="accent">Cancel</button>
+</form>
+</div>

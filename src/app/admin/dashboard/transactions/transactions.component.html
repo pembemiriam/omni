@@ -1,0 +1,49 @@
+<h4 class="header"> View all Transactions</h4>
+
+<mat-card class="container">
+      <div fxLayout="row" fxLayoutGap="50px">
+          <mat-form-field fxFlex>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event.target.value)">
+          </mat-form-field>
+      </div>
+
+  <table mat-table [dataSource]="transactionData" class="mat-elevation-z5" matSort>
+
+    <ng-container matColumnDef="transaction_id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Transaction id </th>
+      <td mat-cell *matCellDef="let transaction"> {{transaction.transaction_id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="transaction_status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+      <td mat-cell *matCellDef="let transaction"> {{transaction.transaction_status}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="receiver.id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Receiver id </th>
+      <td mat-cell *matCellDef="let transaction"> {{transaction.receiver.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="user.identifier">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> User </th>
+      <td mat-cell *matCellDef="let transaction"> {{transaction.user.identifier}} </td>
+    </ng-container>
+
+
+     <ng-container matColumnDef="momo_fee">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Mobilemoney fee </th>
+      <td mat-cell *matCellDef="let transaction"> {{transaction.momo_fee}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sending_fee">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Sending fee </th>
+      <td mat-cell *matCellDef="let transaction"> {{transaction.sending_fee}} </td>
+    </ng-container> 
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" showFirstLastButtons></mat-paginator> 
+</mat-card>

@@ -1,0 +1,29 @@
+<mat-card class="container">
+    <h4 class="header"> Create Configurations</h4>
+    <hr>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+        <mat-form-field class="input-width">
+            <input matInput placeholder="Sending Fee" name="sending_fee" ngModel>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="input-width">
+            <input matInput placeholder="Paypal Fee" name="paypal_fee" ngModel>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="input-width">
+            <input matInput placeholder="Converter Key" name="currency_converter_key" ngModel>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="input-width">
+            <input matInput placeholder="Paypal Authentication" name="paypal_authentication" ngModel>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="input-width">
+            <input matInput placeholder="Paypal Secret Key" name="paypal_secret_key" ngModel>
+        </mat-form-field>
+        <br>
+                
+        <button mat-raised-button color="primary" type="submit" [disabled]="!form.form.valid" class="conf">Save</button>
+        <button mat-button type="reset" color="accent">Cancel</button>
+    </form>
+</mat-card>

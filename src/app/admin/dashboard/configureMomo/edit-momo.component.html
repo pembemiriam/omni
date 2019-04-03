@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Edit Amount</h1>
+<div mat-dialog-content>
+  <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+    <mat-form-field>
+      <input matInput placeholder="From"  [(ngModel)] = "mobilemoney.start" name="start">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="To"  [(ngModel)] = "mobilemoney.end" name="end">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Charge"  [(ngModel)] = "mobilemoney.cost" name="cost">
+    </mat-form-field>
+ <br>
+  <button mat-raised-button color="primary" type="submit">Save</button>
+  <button mat-button (click)="onNoClick()" color="accent">Cancel</button>
+</form>
+</div>

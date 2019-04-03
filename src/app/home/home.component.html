@@ -1,0 +1,207 @@
+<nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg" color-on-scroll="100">
+  <div class="container">
+    <div class="navbar-translate">
+      <div class="navbar-brand">
+        OMNI~PAID
+      </div>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="" data-toggle="modal" (click)="openDialog()">
+            <i class="material-icons">lock</i> Login
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="" data-toggle="modal" (click)="openSign()">
+            <i class="material-icons">
+              person_add
+            </i> Sign up
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="material-icons">
+              people_outline
+            </i> About us
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dashboard">
+            <i class="material-icons">
+              monetization_on
+            </i>Go to Admin
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/pay.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="brand text-center">
+          <h1>OMNI~PAID</h1>
+          <h2 class="title text-center ">Easy way to send money across the world</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main main-raised">
+  <div class="container">
+    <div class="section text-center">
+
+      <h1>
+        What is OMNI~PAID?
+      </h1>
+
+
+    </div>
+  </div>
+</div>
+
+<footer class="footer footer-default">
+  <div class="container">
+
+    <div class="copyright float-right">
+      &copy;
+      2019, created by Skylabase
+    </div>
+  </div>
+</footer>
+
+<!-- <div class="modal fade" id="loginModal" tabindex="-1" role="">
+  <div class="modal-dialog modal-login" role="document">
+    <div class="modal-content">
+      <div class="card card-signup card-plain">
+        <div class="modal-header">
+          <div class="card-header card-header-success text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <i class="material-icons">clear</i>
+            </button>
+
+            <h4 class="card-title">Log in</h4>
+            <div class="social-line">
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                <i class="fa fa-facebook-square"></i>
+              </a>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                <i class="fa fa-twitter"></i>
+                <div class="ripple-container"></div>
+              </a>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <div class="modal-body">
+            <p class="description text-center">Login</p>
+            <div class="card-body">
+              <mat-form-field class="input-width">
+                <input matInput placeholder="username" formControlName="identifier" id="identifier" autocomplete="off">
+              </mat-form-field>
+              <br>
+              <mat-form-field class="input-width">
+                <input matInput placeholder="password" formControlName="password" type="password" id="password"
+                  autocomplete="off">
+              </mat-form-field>
+              <br>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid"
+              class="btn">Login</button>
+            <div *ngIf="invalidLogin" class="error">
+              <div>Invalid credentials.</div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="modal fade" id="signupModal" tabindex="-1" role="">
+  <div class="modal-dialog modal-login" role="document">
+    <div class="modal-content">
+      <div class="card card-signup card-plain">
+        <div class="modal-header">
+          <div class="card-header card-header-primary text-center">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+              <i class="material-icons">clear</i>
+            </button>
+
+            <h4 class="card-title">Sign Up</h4>
+            <div class="social-line">
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                <i class="fa fa-facebook-square"></i>
+              </a>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                <i class="fa fa-twitter"></i>
+                <div class="ripple-container"></div>
+              </a>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+          <div class="modal-body">
+            <p class="description text-center">Create an Account</p>
+            <div class="card-body">
+
+              <mat-form-field class="input-width">
+                <input matInput type="text" placeholder="Username" name="identifier" required ngModel>
+              </mat-form-field> <br>
+              <mat-form-field class="input-width">
+                <input matInput type="text" placeholder="First name" name="first_name" required ngModel>
+              </mat-form-field> <br>
+
+              <mat-form-field class="input-width">
+                <input matInput type="text" placeholder="Last name" name="last_name" required ngModel>
+              </mat-form-field> <br>
+
+              <mat-form-field class="input-width">
+                <input matInput type="text" placeholder="email" name="email" required ngModel>
+              </mat-form-field> <br>
+
+              <mat-form-field class="input-width">
+                <input matInput type="password" placeholder="Password" name="password" required ngModel>
+              </mat-form-field><br>
+
+              <mat-form-field class="input-width">
+                <input matInput type="number" placeholder="Phone Number" name="phone_number" required ngModel>
+              </mat-form-field>
+
+            </div>
+          </div>
+          <div class="modal-footer justify-content-center">
+            <button type="submit" class="btn btn-primary" [disabled]="!form.form.valid">Submit</button><br>
+            
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</div> -->

@@ -1,0 +1,172 @@
+<div [class.loader-hidden]="!show">
+  <div class="loader-overlay">
+    <div>
+      <mat-progress-bar mode="indeterminate" color="accent" value="60" *ngIf="show"></mat-progress-bar>
+    </div>
+  </div>
+</div>
+<div class="card card-nav-tabs text-center">
+  <!-- <div class="card-header card-header-info">
+    Send Money
+  </div> -->
+  <div class="card-body">
+
+    <form>
+      <div fxLayout="row" fxLayoutGap="25px" fxLayout.xs="column">
+
+        <mat-form-field fxFlex="calc(70% - 25px)">
+          <input matInput placeholder="Enter the Amount To send" currencyMask [(ngModel)]="amount" name="first">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="calc(20% - 25px)">
+          <mat-select placeholder="currency" (selectionChange)="valueChange($event)">
+            <mat-option value="AUD">AUD</mat-option>
+            <mat-option value="BRL">BRL</mat-option>
+            <mat-option value="CAD">CAD</mat-option>
+            <mat-option value="CZK">CZK</mat-option>
+            <mat-option value="EUR">EUR</mat-option>
+            <mat-option value="HKD">HKD</mat-option>
+            <mat-option value="HUF">HUF</mat-option>
+            <mat-option value="JPY">JPY</mat-option>
+            <mat-option value="MYR">MYR</mat-option>
+            <mat-option value="MXN">MXN</mat-option>
+            <mat-option value="PHP">PHP</mat-option>
+            <mat-option value="RUB">RUB</mat-option>
+            <mat-option value="USD">USD</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div *ngIf="currency_code">
+        <div fxLayout="row" fxLayoutGap="25px" fxLayout.xs="column">
+          <mat-form-field fxFlex="calc(30% - 25px)">
+
+            <div fxLayout="row" fxLayoutGap="25px">
+              <div>
+                <input matInput placeholder="Sending Fee" currencyMask disabled [value]="sending_fees" name="sending"
+                  [options]="{ prefix: ' ', thousands: ',', decimal: '.' }">
+              </div>
+              <div>
+                {{currency_code}}
+              </div>
+            </div>
+
+          </mat-form-field>
+
+          <mat-form-field fxFlex="calc(30% - 25px)">
+
+            <div fxLayout="row" fxLayoutGap="25px">
+              <div>
+                <input matInput placeholder="Mobile Money Fee" currencyMask disabled [value]="mobile_momney_fee" name="momo"
+                  [options]="{ prefix: ' ', thousands: ',', decimal: '.' }">
+              </div>
+              <div>
+                {{currency_code}}
+              </div>
+            </div>
+
+          </mat-form-field>
+
+          <mat-form-field fxFlex="calc(30% - 25px)">
+
+            <div fxLayout="row" fxLayoutGap="25px">
+              <div>
+                <input matInput placeholder="Paypal Fee" currencyMask disabled [value]="paypal_fee" name="paypal"
+                  [options]="{ prefix: ' ', thousands: ',', decimal: '.' }">
+              </div>
+              <div>
+                {{currency_code}}
+              </div>
+            </div>
+
+          </mat-form-field>
+
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="25px" class="fee" fxLayout.xs="column">
+          <mat-form-field fxFlex="calc(50% - 25px)">
+            <div fxLayout="row" fxLayoutGap="25px">
+              <div>
+                <input matInput placeholder="Total Money To Send" currencyMask disabled [value]="total_to_send" name="send"
+                  [options]="{ prefix: ' ', thousands: ',', decimal: '.' }">
+              </div>
+              <div>
+                {{currency_code}}
+              </div>
+            </div>
+          </mat-form-field>
+
+          <mat-form-field fxFlex="calc(50% - 25px)">
+            <div fxLayout="row" fxLayoutGap="25px">
+              <div>
+                <input matInput placeholder="Total Money To Recieve" currencyMask disabled [value]="total_to_receive"
+                  name="receive" [options]="{ prefix: ' ', thousands: ',', decimal: '.' }">
+              </div>
+              <div>
+                XAF
+              </div>
+            </div>
+
+          </mat-form-field>
+        </div>
+
+        <button type="button" class="btn btn-success btn-sm" (click)="enable()">Continuous</button>
+
+      </div>
+
+
+      <!-- <div id="paypal-button-container" class="btn-sm"></div>-->
+
+     
+      <!-- <div id="paypal-checkout-btn"></div>
+      <button mat-raised-button class="btn btn-danger btn-block" (click)="showNotification('top','left','hello')">Bottom Left</button> -->
+    </form>
+
+    <div *ngIf="enableValue">
+      <h1> Information of the reciever</h1>
+      <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+
+        <div fxLayout="row" fxLayoutGap="25px" fxLayout.xs="column">
+
+          <mat-form-field class="example-full-width" fxFlex="calc(50% - 25px)">
+            <input matInput type="text" placeholder="First name" name="first_name" required ngModel>
+            <mat-error>
+              Please the First Name is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" fxFlex="calc(50% - 25px)">
+            <input matInput type="text" placeholder="Last Name" name="last_name" required ngModel>
+            <mat-error>
+              Please the Last Name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row" fxLayoutGap="25px" fxLayout.xs="column">
+          <mat-form-field class="example-full-width" fxFlex="calc(50% - 25px)">
+            <input matInput type="number" placeholder="Mobile Number" name="phone_number" required ngModel>
+            <mat-error>
+              Please the Mobile Number is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width" fxFlex="calc(50% - 25px)">
+            <input matInput type="email" placeholder="Email" name="email" ngModel>
+          </mat-form-field>
+        </div>
+        <div *ngIf="confirmValue">
+        <button class="btn btn-success btn-sm" type="submit" [disabled]="!form.form.valid">Confirm</button>
+      </div>
+      </form>
+
+      <div *ngIf="formValue"> 
+        <div id="paypal-checkout-btn"></div>
+      </div>
+
+    </div>
+  </div>
+  <div>
+    <button type="button" class="btn btn-info">Send money</button>
+  </div> 
+  </div>

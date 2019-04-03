@@ -1,0 +1,19 @@
+.container{
+    margin-top:10%;
+    width : 40%;
+}
+   
+.header{
+    margin-top:2%;
+    text-align:center;
+    margin-left : 5%;
+}
+
+.input-width{
+    width:80%;
+    padding-left:10%;
+}
+.conf{
+    margin-left:10%; 
+    padding-right:10%;
+}

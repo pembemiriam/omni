@@ -1,0 +1,44 @@
+<div class="dashboard">
+  <mat-drawer-container class="example-container">
+       <mat-drawer #drawer mode="side" opened class="sidenav">
+
+      <h3>Admin Dashboard</h3>
+        <img src="assets/img/ublogo.png" />
+      <div class="sideicon">
+        <ul>
+          <li [routerLink]="['/dashboard']">
+            <mat-icon>dashboard</mat-icon>Dashboard
+          </li>
+          <li [routerLink]="['']">
+            <mat-icon >person</mat-icon>Create Admin
+          </li>
+          <li [routerLink]="['configureMomo']">
+            <mat-icon >monetization_on</mat-icon>Configure Mobile Money fee
+          </li>
+          <li [routerLink]="['transactions']">
+            <mat-icon >library_books</mat-icon>View all transactions
+          </li>
+          <li [routerLink]="['configurations']">
+            <mat-icon >content_paste</mat-icon> View Configurations
+          </li>
+        </ul>
+      </div>
+    </mat-drawer>
+
+    <mat-drawer-content class="content">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+              <span>
+                  <button mat-button (click)="drawer.toggle()"><mat-icon>dashboard</mat-icon></button>
+              </span>
+              <span class="example-spacer"></span>
+        
+              <mat-icon class="example-icon" aria-hidden="false" aria-label="setting">person</mat-icon>
+            </mat-toolbar-row>
+          </mat-toolbar>
+
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container> 
+
+</div>

@@ -1,0 +1,9 @@
+export class User{
+    identifier:string;
+    first_name:string;
+    last_name:string;
+    email:string;
+    password:string;
+    country:string;
+    phone_number:number;
+}

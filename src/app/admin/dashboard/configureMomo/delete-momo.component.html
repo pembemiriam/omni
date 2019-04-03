@@ -1,0 +1,7 @@
+<h1 mat-dialog-title></h1>
+<div mat-dialog-content>
+  <p>Are you Sure you want to delete fee? {{data.id}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onDelete(data.id)">Yes</button>
+  <button mat-button (click)="onNoClick()">NO</button>

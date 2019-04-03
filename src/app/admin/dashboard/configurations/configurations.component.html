@@ -1,0 +1,37 @@
+<h4 class="header"> View Configurations</h4>
+
+<mat-card class="container">
+  <button mat-raised-button color="primary" class="btn" [routerLink]="['addConfiguration']" >Add Configuration</button> 
+
+  <table mat-table [dataSource]="configurationData" class="mat-elevation-z5">
+
+    <ng-container matColumnDef="sending_fee">
+      <th mat-header-cell *matHeaderCellDef> Sending Fee </th>
+      <td mat-cell *matCellDef="let configuration"> {{configuration.sending_fee}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="paypal_fee">
+      <th mat-header-cell *matHeaderCellDef> Paypal Fee </th>
+      <td mat-cell *matCellDef="let configuration"> {{configuration.paypal_fee}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="currency_converter_key">
+      <th mat-header-cell *matHeaderCellDef> Converter Key </th>
+      <td mat-cell *matCellDef="let configuration"> {{configuration.currency_converter_key}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="paypal_authentication">
+      <th mat-header-cell *matHeaderCellDef> Paypal Authentication </th>
+      <td mat-cell *matCellDef="let configuration"> {{configuration.paypal_authentication}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="paypal_secret_key">
+      <th mat-header-cell *matHeaderCellDef> Paypal Secret Key </th>
+      <td mat-cell *matCellDef="let configuration"> {{configuration.paypal_secret_key}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <br>
+</mat-card>

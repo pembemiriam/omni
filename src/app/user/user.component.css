@@ -1,0 +1,12 @@
+.main-content{
+    margin: 0 15%;
+    padding-top:3%;
+}
+.header{
+    font-weight: bold;
+    padding-bottom:2%;
+    text-transform: capitalize;
+}
+.content{
+    background-color: white;
+}
